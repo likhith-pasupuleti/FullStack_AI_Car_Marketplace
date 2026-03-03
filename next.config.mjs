@@ -1,7 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  async headers() {
+    return [
+      {
+        source: "/embed",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: "frame-src 'self' https://likhith.created.app",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

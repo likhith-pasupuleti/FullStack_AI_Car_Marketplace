@@ -14,10 +14,15 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className} antialiased`}>
+        <body
+          className={`${inter.className} antialiased flex flex-col min-h-screen`}
+        >
           <Header />
-          <main className="min-h-screen">{children}</main>
-          <footer className="bg-blue-50 py-12">
+
+          {/* Main grows to fill remaining space */}
+          <main className="flex-1">{children}</main>
+
+          <footer className="bg-blue-50 py-4">
             <div className="container mx-auto px-4 text-center text-gray-600">
               <p className="font-bold">Made with Love by Likhith</p>
             </div>

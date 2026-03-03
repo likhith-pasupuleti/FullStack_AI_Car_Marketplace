@@ -1,7 +1,11 @@
 import React from "react";
 
 const AuthLayout = ({ children }) => {
-  return <div className="flex justify-center pt-20">{children}</div>;
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sky-200 via-white to-orange-200">
+      {children}
+    </div>
+  );
 };
 
 export default AuthLayout;
