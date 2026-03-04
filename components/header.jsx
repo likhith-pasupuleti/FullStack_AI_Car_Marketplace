@@ -60,11 +60,11 @@ const Header = async ({ isAdminPage = false }) => {
             </SignedIn>
           )}
 
-          <SignedOut>
+          {/*-- <SignedOut>
             <SignInButton forceRedirectUrl="/">
               <Button variant="outline">Login</Button>
             </SignInButton>
-          </SignedOut>
+          </SignedOut> --*/}
 
           <SignedIn>
             <UserButton appearance={{ elements: { avatarBox: "w-20 h-20" } }} />
