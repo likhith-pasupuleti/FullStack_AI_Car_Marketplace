@@ -64,7 +64,7 @@ const CarCard = ({ car }) => {
           <span>{car.fuelType}</span>
         </div>
 
-        <div className="flex flex-wrap gap-1 mb-4">
+        <div className="flex flex-row gap-1 mb-4">
           <Badge variant="outline" className="bg-gray-50">
             {car.bodyType}
           </Badge>

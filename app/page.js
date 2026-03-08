@@ -11,20 +11,19 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { SignedOut } from "@clerk/nextjs";
 
 export default function Home() {
   return (
     <div className="pt-20 flex flex-col">
       <section className="relative py-16 md:py-28 bg-gradient-to-br from-slate-900 via-slate-900 to-orange-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
-            <h1 className="text-5xl md:text-8xl mb-4 gradient-title">
-              Find Your Dream Car With Vehiql AI
-            </h1>
-            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-              Advanced AI Car Search and Test Drive from Thousands of Vehicles
-            </p>
-          </div>
+        <div className="max-w-4xl mx-auto text-center mb-8">
+          <h1 className="text-5xl md:text-8xl mb-4 gradient-title">
+            Find Your Dream Car With Vehiql AI
+          </h1>
+          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+            Advanced AI Car Search and Test Drive from Thousands of Vehicles
+          </p>
           <HomeSearch />
         </div>
       </section>
@@ -178,6 +177,28 @@ export default function Home() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-28 bg-gradient-to-br from-slate-900 via-slate-900 to-orange-800">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4 gradient-title">
+            Ready to Find Your Dream Car?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Join thousands of satisfied customers who found their perfect
+            vehicle through our platform.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button size="lg" variant="secondary" asChild>
+              <Link href="/cars">View All Cars</Link>
+            </Button>
+            <SignedOut>
+              <Button size="lg" asChild>
+                <Link href="/sign-up">Sign Up Now</Link>
+              </Button>
+            </SignedOut>
+          </div>
         </div>
       </section>
     </div>

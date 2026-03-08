@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
           className={`${inter.className} antialiased flex flex-col min-h-screen`}
         >
           <Header />
+          <Toaster richColors />
 
           {/* Main grows to fill remaining space */}
           <main className="flex-1">{children}</main>
